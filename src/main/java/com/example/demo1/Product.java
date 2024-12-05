@@ -1,8 +1,6 @@
 package com.example.demo1;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,6 +9,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class Product {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
     @Column(name = "name", nullable = false)
     String name;
