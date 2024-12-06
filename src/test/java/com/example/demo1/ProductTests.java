@@ -11,6 +11,8 @@ public class ProductTests {
     @Autowired
     ProductRepsitory productRepsitory;
     @Autowired
+    ProductService productService;
+    @Autowired
     TestEntityManager entityManager;
 
     @Test
@@ -20,5 +22,11 @@ public class ProductTests {
         Product found = entityManager.find(
                 Product.class, insertedProduct.getId());
         Assertions.assertEquals(insertedProduct, found);
+    }
+
+    public void testGetAllProducts() {
+        Product product1 = new Product("Test1");
+        Product product2 = new Product("Test2");
+//        productService.
     }
 }
