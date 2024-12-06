@@ -20,4 +20,7 @@ public class Product {
     @Column
     String description;
 
+    public Product(String name) {
+        this.name = name;
+    }
 }

@@ -9,17 +9,15 @@ import java.util.List;
 @RestController
 public class ProductController {
     @Autowired
-    ProductRepsitory productRepsitory;
+    private ProductService productService;
 
     @GetMapping("/add")
     public Product add() {
-        Product product = new Product();
-        product.setName("Test");
-        productRepsitory.save(product);
-        return product;
+        return productService.addProduct();
     }
     @GetMapping("/list")
     public List<Product> getProducts() {
-        return productRepsitory.findAll();
+//        return productRepsitory.findAll();
+        return null;
     }
 }
